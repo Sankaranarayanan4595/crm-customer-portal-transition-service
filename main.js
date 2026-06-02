@@ -46,7 +46,7 @@ try {
   const allowedOrigins = (process.env.CORS_ALLOWED_ORIGINS || 'http://localhost:4200').split(',').map(o => o.trim());
 
   const io = require('socket.io')(server, {
-    path: "/CRMService/socket.io/",
+    path: "/CRMTransitionService/socket.io/",
     cors: {
       origin: allowedOrigins,
       methods: ["GET", "POST"],
