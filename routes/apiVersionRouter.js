@@ -17,7 +17,7 @@ const express = require('express');
 const logger = require('../shared/logger');
 
 const API_V1_PREFIX = '/api/v1/crm';
-const LEGACY_PREFIX = '/CRMService';
+const LEGACY_PREFIX = '/CRMTransitionService';
 
 /**
  * Create a versioned API router that mounts routes under both
@@ -59,6 +59,7 @@ function mountVersionedRoutes(app, routes) {
 function buildRouteTable() {
   return [
     { path: 'transition', router: require('./transitionRoutes') },
+    { path: 'customerPortal', router: require('./customerPortalRoutes') },
   ];
 }
 
